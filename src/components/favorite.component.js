@@ -21,7 +21,7 @@ export class FavoriteComponent extends Component {
 
     const html = renderList(favorites)
 
-    this.$el.insertAdjacentHTML('afterbegin', html.join(' '))
+    this.$el.insertAdjacentHTML('afterbegin', html)
   }
 
   onHide() {
@@ -50,7 +50,7 @@ function renderList(list = []) {
 
     return list.map(item => {
       return `<li><a href="#" class="js-link">${item}</a></li>`
-    })
+    }).join(' ')
 
   }
     
